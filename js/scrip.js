@@ -41,7 +41,7 @@ function renderTask(Tasks){
         }
         content += `<li class="completed">
         <div class="view" style="display: flex;" ondblclick="editTask(${task.id})" id="eT${task.id}">
-            <input class="toggle" type="checkbox" ${completed}>
+            <input onclick="updateStatus(${task.id},${task.status})" class="toggle" type="checkbox" ${completed}>
             <label id="name${task.id}">${task.name}</label>
             <a class="destroy" href="#" onclick="deleteTask(${task.id})" style="text-decoration: none;margin-top: 20px;"></a>
         </div>
@@ -86,5 +86,34 @@ function deleteTask(id){
             getTasks(renderTask)
         })
 }
-function editTask(id){
+function updateStatus(id,status,callback){
+    if(status==0){
+    var options={
+        method:'PUT',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+            status: 1
+        })
+    }
+}
+    else
+    {
+        var options={
+            method:'PUT',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                status: 0
+            })
+        }
+    }
+    fetch(taskApi+'/'+ id,options)
+    .then(function(response){
+        return response.json();
+    })
+    .then(callback)
+
 }
