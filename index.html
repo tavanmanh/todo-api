@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/index.css">
+		<!-- CSS overrides - remove if you don't need it -->
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" id="new" placeholder="What needs to be done?" autofocus>
+			</header>
+			<!-- This section should be hidden by default and shown when there are todos -->
+			<section class="main">
+			</section>
+			<!-- This footer should hidden by default and shown when there are todos -->
+			<footer class="footer" id="footer">
+				<span class="todo-count"><strong>0</strong></span>
+				<!-- Remove this if you don't implement routing -->
+				<ul class="filters">
+					<li>
+						<a href="#" class="all">All</a>
+					</li>
+					<li>
+						<a href="#" class="active">Active</a>
+					</li>
+					<li>
+						<a href="#" class="comp">Completed</a>
+					</li>
+				</ul>
+				<button class="clear-completed" id="clear">Clear All</button>
+			</footer>
+		</section>
+		<!-- Scripts here. Don't remove ↓ -->
+		<script src="js/scrip.js"></script>
+	</body>
+</html>
